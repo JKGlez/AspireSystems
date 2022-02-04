@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MechanicalWorkshop.Models.tbl_Clients>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Clients Registered at the Mechanical Workshop</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Name_Client)*@
+            Name
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.NickName_Client)*@
+            Nickname
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Pay_Day_Client)*@
+            Pay day
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Mobile_Phone_Client)*@
+            Mobile Phone
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Email_Client)*@
+            More actions
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Billing_Data_Client)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NickName_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pay_Day_Client.Value.DayOfWeek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile_Phone_Client)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Email_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Billing_Data_Client)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Client }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_Client }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Client })
+        </td>
+    </tr>
+}
+
+</table>

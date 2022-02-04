@@ -1,0 +1,74 @@
+﻿@model MechanicalWorkshop.Models.tbl_WorkOrders
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_WorkOrders</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate_WorkOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate_WorkOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinishDate_WorkOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinishDate_WorkOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observation_WorkOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observation_WorkOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalCost_WorkOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalCost_WorkOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status_WorkOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status_WorkOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Clients.Name_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Clients.Name_Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Vehicles.Brand_Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Vehicles.Brand_Vehicle)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_WorkOrder }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,68 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-eye"></i> {{title}}
+    </div>
+    <div class="card-body">
+
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <i class="fa fa-align-justify"></i>Table of clients
+          </div>
+          <div class="card-body">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Client (id)</th>
+                  <th>Vehicle (id)</th>
+                  <th>Start Date</th>
+                  <th>Finish Date</th>
+                  <th>Final Cost (MNX)</th>
+                  <th>More Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let work_order of workorders; let i = index">
+                  <td> {{work_order.Id_WorkOrder}}</td>
+                  <td> {{work_order.Client_WorkOrder}} </td>
+                  <td> {{work_order.Vehicle_WorkOrder}} </td>
+                  <td> {{work_order.StartDate_WorkOrder}} </td>
+                  <td> {{work_order.FinishDate_WorkOrder}} </td>
+                  <td> ${{work_order.FinalCost_WorkOrder}} </td>
+                  <td>
+                    <div class="row col-12 align-items-center">
+                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                      <button type="button" class="btn btn-pill btn-block btn-info">Details</button>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                      <!-- <button type="button" class="btn btn-pill btn-block btn-warning" (click)="onUpdateClient(clients[i].Id_Client)">Edit</button> -->
+                      <button type="button" class="btn btn-pill btn-block btn-warning">Edit</button>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                      <button type="button" class="btn btn-pill btn-block btn-danger" (click)="onDeleteClient(clients[i].Id_Client)">Delete</button>
+                    </div>
+                  </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Prev</a></li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

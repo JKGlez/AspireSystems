@@ -1,0 +1,58 @@
+﻿@model MechanicalWorkshop.Models.tbl_Vehicles
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_Vehicles</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand_Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand_Vehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model_Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model_Vehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NickName_Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NickName_Vehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Economic_Number_Vehicle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Economic_Number_Vehicle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_Clients.Name_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_Clients.Name_Client)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Vehicle }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

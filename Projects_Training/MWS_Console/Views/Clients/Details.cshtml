@@ -1,0 +1,66 @@
+﻿@model MechanicalWorkshop.Models.tbl_Clients
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_Clients</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name_Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NickName_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NickName_Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pay_Day_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pay_Day_Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile_Phone_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile_Phone_Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email_Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Billing_Data_Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Billing_Data_Client)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Client }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

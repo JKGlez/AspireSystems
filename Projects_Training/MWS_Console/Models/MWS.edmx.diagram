@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="db63ddae88b747ada3e1f73ee8021ecd" Name="Diagram1">
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_Clients" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_Payments" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_ServicesProvided" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_Vehicles" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_WorkOrders" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_Payments_IdClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_Vehicle_IdClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_WorkOrder_IdClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_Payments_IdWorkOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_ServicesProvided_IdWorkOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_WorkOrder_IdVehicle" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

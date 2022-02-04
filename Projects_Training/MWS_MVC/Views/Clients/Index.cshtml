@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MWS_MVC.Models.tbl_Clients>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id_Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NickName_Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pay_Day_Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile_Phone_Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email_Client)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Billing_Data_Client)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NickName_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pay_Day_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile_Phone_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email_Client)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Billing_Data_Client)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+        </td>
+    </tr>
+}
+
+</table>

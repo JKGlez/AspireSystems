@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d11221882b3242cf92c26bf6e738efbf" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_Clients" Width="1.5" PointX="0.625" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_Payments" Width="1.5" PointX="3.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_ServicesProvided" Width="1.5" PointX="6.625" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_Vehicles" Width="1.5" PointX="0.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_WorkOrders" Width="1.5" PointX="3.625" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_Payments_IdClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_Vehicle_IdClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_WorkOrder_IdClient" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_Payments_IdWorkOrder" ManuallyRouted="false" />
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_ServicesProvided_IdWorkOrder" ManuallyRouted="true" >
+          <ConnectorPoint PointX="3.671875" PointY="5.326396484375" />
+          <ConnectorPoint PointX="3.671875" PointY="5.7030242006359835" />
+          <ConnectorPoint PointX="4.354166666666667" PointY="5.7030242006359826" />
+          <ConnectorPoint PointX="4.520833333333333" PointY="5.7030242006359835" />
+          <ConnectorPoint PointX="5.9747931474695415" PointY="5.7030242006359835" />
+          <ConnectorPoint PointX="5.9747931474695415" PointY="8.7134407552083317" />
+          <ConnectorPoint PointX="6.625" PointY="8.7134407552083317" />
+        </AssociationConnector>
+        <AssociationConnector Association="Mechanical_WorkshopModel.FK_WorkOrder_IdVehicle" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Mechanical_WorkshopModel.tbl_Users" Width="1.5" PointX="6.125" PointY="2.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

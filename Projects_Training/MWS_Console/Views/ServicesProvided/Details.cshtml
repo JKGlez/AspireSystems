@@ -1,0 +1,74 @@
+﻿@model MechanicalWorkshop.Models.tbl_ServicesProvided
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tbl_ServicesProvided</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description_Service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description_Service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observation_Service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observation_Service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstimatedCost_Service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstimatedCost_Service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraExpenses_Service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraExpenses_Service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExtraExpensesDescription_Service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExtraExpensesDescription_Service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalCost_Service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalCost_Service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tbl_WorkOrders.Observation_WorkOrder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tbl_WorkOrders.Observation_WorkOrder)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Service }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

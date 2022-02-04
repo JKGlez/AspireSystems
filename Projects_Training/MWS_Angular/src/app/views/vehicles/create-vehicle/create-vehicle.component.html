@@ -1,0 +1,75 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="cil-user-plus"></i> Register new vehicle
+    </div>
+    <div class="card-body">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-header">
+            <strong>New vehicle data</strong>
+          </div>
+
+          <form [formGroup]="newVehicleForm" (ngSubmit)="onCreateVehicle(newVehicleForm.value)">
+            
+            <div class="card-body">
+              <div class="form-group">
+                <label for="company">Brand</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="brand"
+                  placeholder="Enter the brand of the vehicle"
+                  formControlName="Brand_Vehicle"
+                />
+              </div>
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="city">Model</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="model"
+                    placeholder="Enter the model of the vehicle"
+                    formControlName="Model_Vehicle"
+                  />
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="postal-code">Nickname</label>
+                  <input
+                  type="text"
+                  class="form-control"
+                  id="nickname"
+                  placeholder="Enter the model of the vehicle"
+                  formControlName="NickName_Vehicle"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="country">Owner of the vehicle (ID)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="owner"
+                  placeholder="Vehicle's Owner"
+                  formControlName="Owner_Vehicle"
+                />
+              </div>
+            </div>
+
+            <!-- <div class="alert alert-danger" style="margin-top: 10px;" *ngIf="msgStatus">
+              <span> {{msg}} </span>
+            </div> -->
+
+            <button type="submit" class="btn btn-success btn-lg btn-block">
+              Register Client
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+      <!--/.col-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Mechanical_WorkshopModelStoreContainer" CdmEntityContainer="Mechanical_WorkshopEntities1">
+    <EntitySetMapping Name="tbl_Clients">
+      <EntityTypeMapping TypeName="Mechanical_WorkshopModel.tbl_Clients">
+        <MappingFragment StoreEntitySet="tbl_Clients">
+          <ScalarProperty Name="Id_Client" ColumnName="Id_Client" />
+          <ScalarProperty Name="Name_Client" ColumnName="Name_Client" />
+          <ScalarProperty Name="NickName_Client" ColumnName="NickName_Client" />
+          <ScalarProperty Name="Pay_Day_Client" ColumnName="Pay_Day_Client" />
+          <ScalarProperty Name="Mobile_Phone_Client" ColumnName="Mobile_Phone_Client" />
+          <ScalarProperty Name="Email_Client" ColumnName="Email_Client" />
+          <ScalarProperty Name="Billing_Data_Client" ColumnName="Billing_Data_Client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Payments">
+      <EntityTypeMapping TypeName="Mechanical_WorkshopModel.tbl_Payments">
+        <MappingFragment StoreEntitySet="tbl_Payments">
+          <ScalarProperty Name="Id_Payment" ColumnName="Id_Payment" />
+          <ScalarProperty Name="Id_Client_Payment" ColumnName="Id_Client_Payment" />
+          <ScalarProperty Name="Id_WorkOrder_Payment" ColumnName="Id_WorkOrder_Payment" />
+          <ScalarProperty Name="Date_Payment" ColumnName="Date_Payment" />
+          <ScalarProperty Name="Amount_Payment" ColumnName="Amount_Payment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ServicesProvided">
+      <EntityTypeMapping TypeName="Mechanical_WorkshopModel.tbl_ServicesProvided">
+        <MappingFragment StoreEntitySet="tbl_ServicesProvided">
+          <ScalarProperty Name="Id_Service" ColumnName="Id_Service" />
+          <ScalarProperty Name="Id_WorkOrder_Service" ColumnName="Id_WorkOrder_Service" />
+          <ScalarProperty Name="Description_Service" ColumnName="Description_Service" />
+          <ScalarProperty Name="Observation_Service" ColumnName="Observation_Service" />
+          <ScalarProperty Name="EstimatedCost_Service" ColumnName="EstimatedCost_Service" />
+          <ScalarProperty Name="ExtraExpenses_Service" ColumnName="ExtraExpenses_Service" />
+          <ScalarProperty Name="ExtraExpensesDescription_Service" ColumnName="ExtraExpensesDescription_Service" />
+          <ScalarProperty Name="FinalCost_Service" ColumnName="FinalCost_Service" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Vehicles">
+      <EntityTypeMapping TypeName="Mechanical_WorkshopModel.tbl_Vehicles">
+        <MappingFragment StoreEntitySet="tbl_Vehicles">
+          <ScalarProperty Name="Id_Vehicle" ColumnName="Id_Vehicle" />
+          <ScalarProperty Name="Brand_Vehicle" ColumnName="Brand_Vehicle" />
+          <ScalarProperty Name="Model_Vehicle" ColumnName="Model_Vehicle" />
+          <ScalarProperty Name="NickName_Vehicle" ColumnName="NickName_Vehicle" />
+          <ScalarProperty Name="Owner_Vehicle" ColumnName="Owner_Vehicle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_WorkOrders">
+      <EntityTypeMapping TypeName="Mechanical_WorkshopModel.tbl_WorkOrders">
+        <MappingFragment StoreEntitySet="tbl_WorkOrders">
+          <ScalarProperty Name="Id_WorkOrder" ColumnName="Id_WorkOrder" />
+          <ScalarProperty Name="Client_WorkOrder" ColumnName="Client_WorkOrder" />
+          <ScalarProperty Name="Vehicle_WorkOrder" ColumnName="Vehicle_WorkOrder" />
+          <ScalarProperty Name="StartDate_WorkOrder" ColumnName="StartDate_WorkOrder" />
+          <ScalarProperty Name="FinishDate_WorkOrder" ColumnName="FinishDate_WorkOrder" />
+          <ScalarProperty Name="Observation_WorkOrder" ColumnName="Observation_WorkOrder" />
+          <ScalarProperty Name="FinalCost_WorkOrder" ColumnName="FinalCost_WorkOrder" />
+          <ScalarProperty Name="Status_WorkOrder" ColumnName="Status_WorkOrder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

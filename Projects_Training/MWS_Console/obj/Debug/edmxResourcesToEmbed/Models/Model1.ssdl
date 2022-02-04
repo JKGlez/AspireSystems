@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Mechanical_WorkshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Clients">
+    <Key>
+      <PropertyRef Name="Id_Client" />
+    </Key>
+    <Property Name="Id_Client" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Client" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NickName_Client" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pay_Day_Client" Type="date" />
+    <Property Name="Mobile_Phone_Client" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email_Client" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Billing_Data_Client" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tbl_Payments">
+    <Key>
+      <PropertyRef Name="Id_Payment" />
+    </Key>
+    <Property Name="Id_Payment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Client_Payment" Type="int" Nullable="false" />
+    <Property Name="Id_WorkOrder_Payment" Type="int" Nullable="false" />
+    <Property Name="Date_Payment" Type="date" Nullable="false" />
+    <Property Name="Amount_Payment" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ServicesProvided">
+    <Key>
+      <PropertyRef Name="Id_Service" />
+    </Key>
+    <Property Name="Id_Service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_WorkOrder_Service" Type="int" Nullable="false" />
+    <Property Name="Description_Service" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Observation_Service" Type="nvarchar" MaxLength="200" />
+    <Property Name="EstimatedCost_Service" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+    <Property Name="ExtraExpenses_Service" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="ExtraExpensesDescription_Service" Type="nvarchar" MaxLength="250" />
+    <Property Name="FinalCost_Service" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_Vehicles">
+    <Key>
+      <PropertyRef Name="Id_Vehicle" />
+    </Key>
+    <Property Name="Id_Vehicle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand_Vehicle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Model_Vehicle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NickName_Vehicle" Type="nvarchar" MaxLength="50" />
+    <Property Name="Economic_Number_Vehicle" Type="int" />
+    <Property Name="Owner_Vehicle" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_WorkOrders">
+    <Key>
+      <PropertyRef Name="Id_WorkOrder" />
+    </Key>
+    <Property Name="Id_WorkOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Client_WorkOrder" Type="int" Nullable="false" />
+    <Property Name="Vehicle_WorkOrder" Type="int" Nullable="false" />
+    <Property Name="StartDate_WorkOrder" Type="date" Nullable="false" />
+    <Property Name="FinishDate_WorkOrder" Type="date" />
+    <Property Name="Observation_WorkOrder" Type="nvarchar" MaxLength="250" />
+    <Property Name="FinalCost_WorkOrder" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Status_WorkOrder" Type="int" />
+  </EntityType>
+  <Association Name="FK_Payments_IdClient">
+    <End Role="tbl_Clients" Type="Self.tbl_Clients" Multiplicity="1" />
+    <End Role="tbl_Payments" Type="Self.tbl_Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Clients">
+        <PropertyRef Name="Id_Client" />
+      </Principal>
+      <Dependent Role="tbl_Payments">
+        <PropertyRef Name="Id_Client_Payment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payments_IdWorkOrder">
+    <End Role="tbl_WorkOrders" Type="Self.tbl_WorkOrders" Multiplicity="1" />
+    <End Role="tbl_Payments" Type="Self.tbl_Payments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_WorkOrders">
+        <PropertyRef Name="Id_WorkOrder" />
+      </Principal>
+      <Dependent Role="tbl_Payments">
+        <PropertyRef Name="Id_WorkOrder_Payment" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ServicesProvided_IdWorkOrder">
+    <End Role="tbl_WorkOrders" Type="Self.tbl_WorkOrders" Multiplicity="1" />
+    <End Role="tbl_ServicesProvided" Type="Self.tbl_ServicesProvided" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_WorkOrders">
+        <PropertyRef Name="Id_WorkOrder" />
+      </Principal>
+      <Dependent Role="tbl_ServicesProvided">
+        <PropertyRef Name="Id_WorkOrder_Service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Vehicle_IdClient">
+    <End Role="tbl_Clients" Type="Self.tbl_Clients" Multiplicity="0..1" />
+    <End Role="tbl_Vehicles" Type="Self.tbl_Vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Clients">
+        <PropertyRef Name="Id_Client" />
+      </Principal>
+      <Dependent Role="tbl_Vehicles">
+        <PropertyRef Name="Owner_Vehicle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_IdClient">
+    <End Role="tbl_Clients" Type="Self.tbl_Clients" Multiplicity="1" />
+    <End Role="tbl_WorkOrders" Type="Self.tbl_WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Clients">
+        <PropertyRef Name="Id_Client" />
+      </Principal>
+      <Dependent Role="tbl_WorkOrders">
+        <PropertyRef Name="Client_WorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WorkOrder_IdVehicle">
+    <End Role="tbl_Vehicles" Type="Self.tbl_Vehicles" Multiplicity="1" />
+    <End Role="tbl_WorkOrders" Type="Self.tbl_WorkOrders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_Vehicles">
+        <PropertyRef Name="Id_Vehicle" />
+      </Principal>
+      <Dependent Role="tbl_WorkOrders">
+        <PropertyRef Name="Vehicle_WorkOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Mechanical_WorkshopModelStoreContainer">
+    <EntitySet Name="tbl_Clients" EntityType="Self.tbl_Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Payments" EntityType="Self.tbl_Payments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ServicesProvided" EntityType="Self.tbl_ServicesProvided" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Vehicles" EntityType="Self.tbl_Vehicles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_WorkOrders" EntityType="Self.tbl_WorkOrders" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Payments_IdClient" Association="Self.FK_Payments_IdClient">
+      <End Role="tbl_Clients" EntitySet="tbl_Clients" />
+      <End Role="tbl_Payments" EntitySet="tbl_Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payments_IdWorkOrder" Association="Self.FK_Payments_IdWorkOrder">
+      <End Role="tbl_WorkOrders" EntitySet="tbl_WorkOrders" />
+      <End Role="tbl_Payments" EntitySet="tbl_Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ServicesProvided_IdWorkOrder" Association="Self.FK_ServicesProvided_IdWorkOrder">
+      <End Role="tbl_WorkOrders" EntitySet="tbl_WorkOrders" />
+      <End Role="tbl_ServicesProvided" EntitySet="tbl_ServicesProvided" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Vehicle_IdClient" Association="Self.FK_Vehicle_IdClient">
+      <End Role="tbl_Clients" EntitySet="tbl_Clients" />
+      <End Role="tbl_Vehicles" EntitySet="tbl_Vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_IdClient" Association="Self.FK_WorkOrder_IdClient">
+      <End Role="tbl_Clients" EntitySet="tbl_Clients" />
+      <End Role="tbl_WorkOrders" EntitySet="tbl_WorkOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WorkOrder_IdVehicle" Association="Self.FK_WorkOrder_IdVehicle">
+      <End Role="tbl_Vehicles" EntitySet="tbl_Vehicles" />
+      <End Role="tbl_WorkOrders" EntitySet="tbl_WorkOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
